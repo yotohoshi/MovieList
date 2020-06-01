@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.logo {
+  width: 500px;
+  height: 150px;
+}
