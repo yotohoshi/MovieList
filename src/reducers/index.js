@@ -1,26 +1,21 @@
 import {
   REMOVE_MOVIE,
-  ADD_MOVIE
-  // INITIAL_DATA_REQUEST,
-  // INITIAL_DATA_SUCCESS,
-  // INITIAL_DATA_FAILURE
+  ADD_MOVIE,
+  FETCH_DATA,
 } from "../types";
-import data from "../data.json";
 
 const initialState = {
-  myList: data.mylist,
-  recommendations: data.recommendations
+  myList: [],
+  recommendations: [],
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    // case INITIAL_DATA_REQUEST:
-    // case INITIAL_DATA_SUCCESS:
-    //   return {
-    //     mylist: action.payload.mylist,
-    //     recommendations: action.payload.recommendations
-    //   };
-    // case INITIAL_DATA_FAILURE:
+    case FETCH_DATA:
+      return {
+        myList: action.payload.mylist,
+        recommendations: action.payload.recommendations
+      };
     case REMOVE_MOVIE:
       return {
         myList: state.myList.filter(item => item.id !== action.payload),

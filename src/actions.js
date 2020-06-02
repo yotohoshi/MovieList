@@ -1,9 +1,7 @@
 import {
   REMOVE_MOVIE,
-  ADD_MOVIE
-  // INITIAL_DATA_REQUEST,
-  // INITIAL_DATA_SUCCESS,
-  // INITIAL_DATA_FAILURE
+  ADD_MOVIE,
+  FETCH_DATA,
 } from "./types";
 
 const action = type => payload => ({
@@ -13,6 +11,12 @@ const action = type => payload => ({
 
 export const removeMovie = action(REMOVE_MOVIE);
 export const addMovie = action(ADD_MOVIE);
-// export const initialDataRequest = action(INITIAL_DATA_REQUEST);
-// export const initialDataSuccess = action(INITIAL_DATA_SUCCESS);
-// export const initialDataFailure = action(INITIAL_DATA_FAILURE);
+export const fetchData = action(FETCH_DATA);
+
+export const getData = () => dispatch =>
+  fetch("/data.json")
+    .then(response => response.json())
+    .then(response => {
+      console.log(response);
+      dispatch(fetchData(response));
+    });

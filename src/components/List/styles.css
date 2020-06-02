@@ -1,14 +1,23 @@
-.card {
+.Card {
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
-.container {
+.Card:hover button {
+  display: inline;
+}
+
+.Container {
   display: flex;
   justify-content: space-evenly;
+  padding: 0px 34px;
 }
 
-.logo {
-  width: 500px;
-  height: 150px;
+.Title {
+  color: white;
+}
+
+button {
+  display: none;
 }

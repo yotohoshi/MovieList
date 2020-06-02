@@ -17,13 +17,15 @@ const defaultProps = {
 
 const List = ({ title, movie, buttonName, handleMethod }) => (
   <div>
-    <h1>{title}</h1>
-    <div className="container">
+    <h1 className="Title" >{title}</h1>
+    <div className="Container">
       {movie.map(item => (
-        <div className="card" key={item.id}>
+        <div className="Card" key={item.id}>
           <p>{item.title}</p>
           <img src={item.img} alt={item.id} />
-          <button onClick={() => handleMethod(item.id)}>{buttonName}</button>
+          <button onClick={() => handleMethod(item.id)} >
+            {buttonName}
+          </button>
         </div>
       ))}
     </div>

@@ -1,4 +1,18 @@
+body {
+  background-color: black;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
+}
+
+.Logo {
+  height: 150px;
+  padding-left: 56px;
+}
+
+.LogoContainer {
+  display: flex;
+  height: 150px;
 }
